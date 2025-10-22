@@ -13,6 +13,10 @@ public class Student {
         return name;
     }
 
+    public void promote(){
+        this.arskurs++;
+    }
+
     public Object stadie() {
         if (arskurs < 1) return "Går ej i skolan ännu";
         if (arskurs < 4) return "Går i lågstadiet";
