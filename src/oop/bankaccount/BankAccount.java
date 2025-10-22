@@ -1,23 +1,19 @@
 package oop.bankaccount;
 
 public class BankAccount {
-    private int saldo; // Attribut
 
-    // Konstruktor
-    public BankAccount(int saldo) {
-        this.saldo = saldo;
-    }
+    private int saldo=0; // Attribut
 
     public int getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(int saldo) {
-        this.saldo = saldo;
-    }
-
     public void insert(int amount) {
         this.saldo += amount;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 
     public boolean withdraw(int amount) {
@@ -25,6 +21,6 @@ public class BankAccount {
             this.saldo -= amount;
             return true;
         }
-        else return false;
+        return false;
     }
 }

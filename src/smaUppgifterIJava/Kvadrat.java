@@ -20,8 +20,7 @@ public class Kvadrat {
         System.out.println(kvadratenAvMittHeltal);
         System.out.println(kvadratenAvMittDecimaltal);
 
-        System.out.println(minString+" "+mittHeltal+minBokstav);
-
+        System.out.println(minString + " " + mittHeltal + minBokstav);
     }
 
 }

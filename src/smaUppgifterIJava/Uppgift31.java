@@ -15,5 +15,11 @@ public class Uppgift31 {
         System.out.print("for varianten: ");
         for(int index=1;index<=10; index++) System.out.print(index+" ");
 
+        System.out.println();
+        int summa=1;
+        for (int i =0; summa < 500; i++){
+            summa += i;
+            if (summa<500) System.out.print(summa+" ");
+        }
     }
 }
