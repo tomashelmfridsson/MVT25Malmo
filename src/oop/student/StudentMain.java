@@ -9,7 +9,7 @@ package oop.student;
 // stadie ifrån mainmetoden.
 public class StudentMain {
     public static void main(String[] args) {
-        Student myStudent = new Student("Tomas", 7);
-        System.out.println(myStudent.getName() + myStudent.stadie());
+        Student myStudent = new Student("Tomas", 9);
+        System.out.println(myStudent.getName() +" "+ myStudent.stadie());
     }
 }

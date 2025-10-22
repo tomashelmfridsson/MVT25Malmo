@@ -16,7 +16,7 @@ public class Student {
     public Object stadie() {
         if (arskurs < 1) return "Går ej i skolan ännu";
         if (arskurs < 4) return "Går i lågstadiet";
-        if (arskurs > 7) return "Går på mellanstadiet";
+        if (arskurs < 7) return "Går på mellanstadiet";
         if (arskurs <= 9) return "Går i högstadiet";
         return "Går ej i grundskolan";
     }
