@@ -24,4 +24,20 @@ public class Student {
         if (arskurs <= 9) return "Går i högstadiet";
         return "Går ej i grundskolan";
     }
+
+    int grade;
+    // Metod som returnerar vilket stadie eleven går på
+    public String getSchoolStage() {
+        if (grade >= 1 && grade <= 3) {
+            return "Lågstadiet";
+        } else if (grade >= 4 && grade <= 6 || grade == 5) {
+            return "Mellanstadiet";
+        } else if (grade >= 7 && grade <= 9) {
+            return "Högstadiet";
+        } else if (grade >= 10 && grade <= 12) {
+            return "Gymnasiet";
+        }
+        return "Okänt stadie";
+    }
+
 }
