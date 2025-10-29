@@ -1,6 +1,7 @@
 package tdd.user;
 
 //Junit5
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,7 +23,6 @@ public class UserTest {
         User myUser = new User("Gunnar","qwerty");
         myUser.setUserName("Åsa");
         assertEquals("Gunnar",myUser.getUserName());
-
     }
 
     @Test
@@ -30,7 +30,49 @@ public class UserTest {
         User myUser = new User("Gunnar","qwerty");
         myUser.setUserName("Olle");
         assertEquals("Olle",myUser.getUserName());
+    }
 
+    @Test
+    void testSetFailedUserName(){
+        String[] indata = {"Åsa","Bo", "Eva"};
+        for (int i=0;i<indata.length;i++){
+            User myUser = new User("Gunnar","qwerty");
+            myUser.setUserName(indata[i]);
+            assertEquals("Gunnar",myUser.getUserName());
+        }
+    }
+
+    @Test
+    void testOfTypeOfUserNormal(){
+        User myUser = new User("Gunnar","qwerty");
+        assertEquals("normal",myUser.getTypeOfUser());
+    }
+
+    @Test
+    void testOfSetTypeOfUserToAdmin(){
+        User myUser = new User("Gunnar","qwerty");
+        myUser.setTypeOfUser("admin");
+        assertEquals("admin",myUser.getTypeOfUser());
+    }
+
+    @Test
+    void testOfSetTypeOfUserToSuper(){
+        User myUser = new User("Gunnar","qwerty");
+        myUser.setTypeOfUser("super");
+        assertEquals("super",myUser.getTypeOfUser());
+    }
+
+    @Test
+    void testOfNotCorrectSetTypeOfUser(){
+        User myUser = new User("Gunnar","qwerty");
+        myUser.setTypeOfUser("fsdfsd");
+        assertEquals("normal",myUser.getTypeOfUser());
+    }
+
+    @Test
+    void testOfSolidus(){
+        User myUser = new User("Gunnar","qwerty");
+        assertEquals(5,myUser.getSolidus());
     }
 
 }
