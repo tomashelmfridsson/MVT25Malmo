@@ -3,6 +3,11 @@ package tdd.user;
 public class User {
 
     private String userName, password, typeOfUser = "normal";
+    private int solidus = 5, numberLoggedIn = 0;
+
+    public void setSolidus(int solidus) {
+        this.solidus = solidus;
+    }
 
     public User(String userName, String password) {
         this.userName = userName;
@@ -34,6 +39,27 @@ public class User {
     }
 
     public int getSolidus() {
-        return 5;
+        return solidus;
+    }
+
+    public boolean loggaIn(String usr, String pswd) {
+        if (usr.equals(this.userName) && pswd.equals(this.password)) {
+            this.solidus++;
+            numberLoggedIn++;
+            if (numberLoggedIn == 20){
+                this.solidus +=20;
+                this.typeOfUser="Goldmember";
+            }
+                return true;
+        }
+        return false;
+    }
+
+    public boolean tShirt(){
+        if (this.solidus >= 15) {
+            this.solidus -= 15;
+            return true;
+        }
+        return false;
     }
 }
