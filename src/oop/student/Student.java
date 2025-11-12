@@ -3,6 +3,7 @@ package oop.student;
 public class Student {
     private String name;
     private int arskurs;
+    static String  titel= "Student";
 
     public Student(String name, int arskurs) {
         this.name = name;
