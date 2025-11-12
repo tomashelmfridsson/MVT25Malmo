@@ -18,6 +18,7 @@ public class Veckodag {
             case 5: veckodag = "Fredga"; break;
             case 6: veckodag = "Lördag"; break;
             case 7: veckodag = "Söndag"; break;
+            default: veckodag= "ingen sådan veckadag finns";
         }
         System.out.println("nummer "+ nummer+ " har veckodagen "+ veckodag);
     }
