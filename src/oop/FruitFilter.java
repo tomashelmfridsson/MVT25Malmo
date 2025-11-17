@@ -1,23 +1,48 @@
 package oop;
 
 public class FruitFilter {
-    public static Fruit[] allGreen(Fruit[] fruitsArray){
-        // Ta reda på antalet gröna fruker
-        int numberOfGreenFruits =0;
-        int numberOfFruits = fruitsArray.length;
-        for (int i=0;i<numberOfFruits;i++){
-            if (fruitsArray[i].color.equals("green")) numberOfGreenFruits++;
+    public static Fruit[] allColored(Fruit[] fruitsArray,String color){
+        // Ta reda på antalet frukter med önskad färg
+        int numberOfColorFruits =0;
+        for (Fruit fruit : fruitsArray) {
+            if (fruit.color.equals(color)) numberOfColorFruits++;
         }
-        // skapa en array med storlek numberOFGreenFruits
-        Fruit[] greenFruits = new Fruit[numberOfGreenFruits];
-        // stoppa in dom gröna frukterna i arrayen
+        // skapa en array med storlek av anatalet frukter i önskad färg
+        Fruit[] greenFruitsArray = new Fruit[numberOfColorFruits];
+
+        // stoppa in dom frukterna med önskad färg i den nya arrayen
         int greenFruitIndex = 0;
-        for (int i=0;i<numberOfFruits;i++){
-            if (fruitsArray[i].color.equals("green")) {
-                greenFruits[greenFruitIndex] = fruitsArray[i];
+        for (Fruit fruit : fruitsArray) {
+            if (fruit.color.equals(color)) {
+                greenFruitsArray[greenFruitIndex] = fruit;
                 greenFruitIndex++;
             }
         }
-        return greenFruits;
+        return greenFruitsArray;
+    }
+
+    public static Fruit[] biggest(Fruit[] fruitsArray) {
+        // Ta reda på storleken på största frukten
+        int maxSize=0;
+        for (Fruit fruit : fruitsArray) {
+            if (fruit.getSize() > maxSize) maxSize = fruit.getSize();
+        }
+
+        // Ta reda på antalet frukter med störst storlek
+        int numberOfMaxSizeFruits =0;
+        for (Fruit fruit : fruitsArray) {
+            if (fruit.getSize() == maxSize) numberOfMaxSizeFruits++;
+        }
+
+        // skapa en array med storlek numberOfMaxSizeFruits
+        Fruit[] maxSizeFruitsArray = new Fruit[numberOfMaxSizeFruits];
+        int maxSizeFruitIndex = 0;
+        for (Fruit fruit : fruitsArray) {
+            if (fruit.getSize() == maxSize) {
+                maxSizeFruitsArray[maxSizeFruitIndex] = fruit;
+                maxSizeFruitIndex++;
+            }
+        }
+        return maxSizeFruitsArray;
     }
 }
