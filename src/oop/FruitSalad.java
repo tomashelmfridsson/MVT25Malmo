@@ -6,9 +6,10 @@ public class FruitSalad {
 
     public static void main(String[] args) {
         Scanner scan1 = new Scanner(System.in);
-        String color = scan1.nextLine();
-        Fruit apple = new Fruit("apple",color);
-        System.out.println(apple.getColor());
+        System.out.println("Mata in alla frukter speparerade med komma (',')");
+        String frukter = scan1.nextLine();
+        String Fruits[] = frukter.split(",");
+
     }
 }
 
