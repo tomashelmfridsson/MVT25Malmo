@@ -9,7 +9,7 @@ public class FruitSalad {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        Fruit[] myFruits = new Fruit[5];
+        Fruit[] myFruits = new Fruit[5]; // {null,null,null,null,null}
         int myFruitIndex =0;
         System.out.println("Mata in alla frukter avsluta med stop");
         Fruit fruit;
@@ -28,7 +28,7 @@ public class FruitSalad {
             fruit = new Fruit(name,color);
             fruit.setSize(size);
             fruit.setTaste(taste);
-            myFruits[myFruitIndex] = fruit;
+            myFruits[myFruitIndex] = fruit;   // {PäronObjekt,null,null,null,null}
             myFruitIndex++;
         }
         System.out.println(myFruits[0].getName());
@@ -43,7 +43,7 @@ public class FruitSalad {
         Fruit[] redFruits = FruitFilter.colorFilter(myFruits,"röd");
         System.out.println("De röda frukterna är");
         for (Fruit f:redFruits){
-            System.out.println(f);
+            System.out.println(f.getName());
         }
     }
 }

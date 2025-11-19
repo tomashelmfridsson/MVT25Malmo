@@ -6,7 +6,8 @@ public class FruitFilter {
         int numberOfColorFruits = 0;
 
         for (Fruit f : fruitsArray) {
-            if (f.color.equals(color)) numberOfColorFruits++;
+            if (f != null)
+                if (f.color.equals(color)) numberOfColorFruits++;
         }
         // [pear,watermelon,grape,apple]
 
@@ -16,9 +17,11 @@ public class FruitFilter {
         // stoppa in dom frukterna med önskad färg i den nya arrayen
         int coloredFruitIndex = 0;
         for (Fruit f : fruitsArray) {
-            if (f.color.equals(color)) {
-                coloredFruits[coloredFruitIndex] = f;
-                coloredFruitIndex++;
+            if (f != null){
+                if (f.color.equals(color)) {
+                    coloredFruits[coloredFruitIndex] = f;
+                    coloredFruitIndex++;
+                }
             }
         }
         return coloredFruits;
@@ -28,13 +31,15 @@ public class FruitFilter {
         // Ta reda på storleken på största frukten
         int maxSize = 0;
         for (Fruit fruit : fruitsArray) {
-            if (fruit.getSize() > maxSize) maxSize = fruit.getSize();
+            if (fruit != null)
+                if (fruit.getSize() > maxSize) maxSize = fruit.getSize();
         }
 
         // Ta reda på antalet frukter med störst storlek
         int numberOfMaxSizeFruits = 0;
         for (Fruit fruit : fruitsArray) {
-            if (fruit.getSize() == maxSize) numberOfMaxSizeFruits++;
+            if (fruit != null)
+                if (fruit.getSize() == maxSize) numberOfMaxSizeFruits++;
         }
 
         // skapa en array med storlek numberOfMaxSizeFruits
@@ -43,9 +48,11 @@ public class FruitFilter {
         // Stoppa in den/de största frukterna i arrayen som skall returneras
         int maxSizeFruitIndex = 0;
         for (Fruit fruit : fruitsArray) {
-            if (fruit.getSize() == maxSize) {
-                maxSizeFruitsArray[maxSizeFruitIndex] = fruit;
-                maxSizeFruitIndex++;
+            if (fruit != null) {
+                if (fruit.getSize() == maxSize) {
+                    maxSizeFruitsArray[maxSizeFruitIndex] = fruit;
+                    maxSizeFruitIndex++;
+                }
             }
         }
         return maxSizeFruitsArray;
