@@ -1,9 +1,9 @@
 package oop;
 
 public class FruitFilter {
-    public static Fruit[] colorFilter(Fruit[] fruitsArray, String color){
+    public static Fruit[] colorFilter(Fruit[] fruitsArray, String color) {
         // Ta reda på antalet frukter med önskad färg
-        int numberOfColorFruits =0;
+        int numberOfColorFruits = 0;
 
         for (Fruit f : fruitsArray) {
             if (f.color.equals(color)) numberOfColorFruits++;
@@ -26,19 +26,21 @@ public class FruitFilter {
 
     public static Fruit[] biggest(Fruit[] fruitsArray) {
         // Ta reda på storleken på största frukten
-        int maxSize=0;
+        int maxSize = 0;
         for (Fruit fruit : fruitsArray) {
             if (fruit.getSize() > maxSize) maxSize = fruit.getSize();
         }
 
         // Ta reda på antalet frukter med störst storlek
-        int numberOfMaxSizeFruits =0;
+        int numberOfMaxSizeFruits = 0;
         for (Fruit fruit : fruitsArray) {
             if (fruit.getSize() == maxSize) numberOfMaxSizeFruits++;
         }
 
         // skapa en array med storlek numberOfMaxSizeFruits
         Fruit[] maxSizeFruitsArray = new Fruit[numberOfMaxSizeFruits];
+
+        // Stoppa in den/de största frukterna i arrayen som skall returneras
         int maxSizeFruitIndex = 0;
         for (Fruit fruit : fruitsArray) {
             if (fruit.getSize() == maxSize) {
