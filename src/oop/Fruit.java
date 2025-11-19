@@ -18,7 +18,7 @@ public class Fruit {
         return this.color;
     }
 
-    public boolean isVegetable() {
+    public boolean isVegetarian() {
         return isVegetarian;
     }
 

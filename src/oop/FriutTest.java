@@ -2,6 +2,8 @@ package oop;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -16,7 +18,7 @@ public class FriutTest {
     @Test
     public void testIsVegetarian(){
         Fruit apple = new Fruit("apple","green");
-        assertTrue(apple.isVegetable());
+        assertTrue(apple.isVegetarian());
     }
 
     @Test
@@ -53,7 +55,11 @@ public class FriutTest {
         Fruit grape = new Fruit("grape","red");
         Fruit watermelon = new Fruit("watermelon","green");
         Fruit apple = new Fruit("apple","green");
-        Fruit[] greenFruits = FruitFilter.allColored(new Fruit[] {pear,grape,watermelon,apple},"green");
+        Fruit[] allFruits = {pear,grape,watermelon,apple};
+        Fruit[] greenFruits = FruitFilter.colorFilter(allFruits ,"green");
+        System.out.println(greenFruits[0].getName());
+        System.out.println(greenFruits[1].getName());
+        System.out.println(greenFruits[2].getName());
         assertEquals(3,greenFruits.length);
     }
 

@@ -1,24 +1,27 @@
 package oop;
 
 public class FruitFilter {
-    public static Fruit[] allColored(Fruit[] fruitsArray,String color){
+    public static Fruit[] colorFilter(Fruit[] fruitsArray, String color){
         // Ta reda på antalet frukter med önskad färg
         int numberOfColorFruits =0;
-        for (Fruit fruit : fruitsArray) {
-            if (fruit.color.equals(color)) numberOfColorFruits++;
+
+        for (Fruit f : fruitsArray) {
+            if (f.color.equals(color)) numberOfColorFruits++;
         }
-        // skapa en array med storlek av anatalet frukter i önskad färg
-        Fruit[] greenFruitsArray = new Fruit[numberOfColorFruits];
+        // [pear,watermelon,grape,apple]
+
+        // skapa en array med storlek av antalet frukter i önskad färg
+        Fruit[] coloredFruits = new Fruit[numberOfColorFruits];
 
         // stoppa in dom frukterna med önskad färg i den nya arrayen
-        int greenFruitIndex = 0;
-        for (Fruit fruit : fruitsArray) {
-            if (fruit.color.equals(color)) {
-                greenFruitsArray[greenFruitIndex] = fruit;
-                greenFruitIndex++;
+        int coloredFruitIndex = 0;
+        for (Fruit f : fruitsArray) {
+            if (f.color.equals(color)) {
+                coloredFruits[coloredFruitIndex] = f;
+                coloredFruitIndex++;
             }
         }
-        return greenFruitsArray;
+        return coloredFruits;
     }
 
     public static Fruit[] biggest(Fruit[] fruitsArray) {
