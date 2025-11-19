@@ -9,6 +9,8 @@ public class FruitSalad {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        int[] intArr = new int[2]; //  {0,0}
+        String[] stringArr = new String[3]; //{"","",""}
         Fruit[] myFruits = new Fruit[5]; // {null,null,null,null,null}
         int myFruitIndex =0;
         System.out.println("Mata in alla frukter avsluta med stop");
@@ -31,9 +33,6 @@ public class FruitSalad {
             myFruits[myFruitIndex] = fruit;   // {PäronObjekt,null,null,null,null}
             myFruitIndex++;
         }
-        System.out.println(myFruits[0].getName());
-        System.out.println(myFruits[0].getSize());
-
 
         Fruit[] biggestFruits = FruitFilter.biggest(myFruits);
         for (Fruit f:biggestFruits){

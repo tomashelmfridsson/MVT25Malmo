@@ -5,7 +5,7 @@ public class FruitFilter {
         // Ta reda på antalet frukter med önskad färg
         int numberOfColorFruits = 0;
 
-        for (Fruit f : fruitsArray) {
+        for (Fruit f : fruitsArray) {   // {PäronObjekt,null,null,null,null}
             if (f != null)
                 if (f.color.equals(color)) numberOfColorFruits++;
         }
